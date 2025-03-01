@@ -1,5 +1,4 @@
 document.querySelectorAll("nav a").forEach(anchor => {
-    console.log(anchor)
     anchor.addEventListener("click", function(e) {
         e.preventDefault()
         const section = document.querySelector(this.getAttribute('href'))

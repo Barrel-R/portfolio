@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="styles.css" />
     <title>Portfolio</title>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
@@ -29,18 +30,46 @@
         </div>
     </section>
     <section id="projects" class="projects">
-        <div>
-            <h2>
-                #<span>Projects</span>
-                <div>
-                    Excel sheet parsing to Word Document in Go
-                    <p>
-                        This project was build in wails, to parse excel sheet, read data
-                        by row and creates a word document if the row contains valid data.
-                    </p>
-                </div>
-            </h2>
-        </div>
+        <h2>#Projects</span></h2>
+        <article class="project-container" x-data="{ open: false }">
+            <h3 class="project-title">Purchase order system in Laravel and Vue.js</h3>
+            <p class="project-description">
+                My most complex project yet, containing multiple related models and
+                relationships, asynchronous data loading, caching with custom invalidation,
+                unit tests, automated tasks, and more, design patterns like Strategy and
+                Observer, and more.
+            </p>
+            <button @click="open = !open">Open details</button>
+            <div class="project-details" x-show="open">
+                <ul>
+                    <span>Languages and Tools:</span>
+                        <li>Laravel</li>
+                        <li>PHP</li>
+                        <li>PestPHP</li>
+                        <li>Vue.js</li>
+                        <li>JavaScript</li>
+                        <li>TailwindCSS</li>
+                </ul>
+                <span>Complexity: 5/5</span>
+            </div>
+        </article>
+        <article class="project-container">
+            <h3 class="project-title">Excel sheet parsing to Word Document in Go</h3>
+            <p class="project-description">
+                This project was build in wails, to parse excel sheet, read data
+                by row and create a word document if the row contains valid data,
+                later organizing each document by company number
+            </p>
+        </article>
+        <article class="project-container">
+            <h3 class="project-title">Automatic image insertion in excel column</h3>
+            <p class="project-description">
+                It was a quick demand to insert many images in an excel column, in
+                the correct cell according to each product. I used python with
+                openpyxl to read and write the data to the sheet, and pandas to
+                handle the sheet data.
+            </p>
+        </article>
     </section>
     <section id="contact" class="Contact">
         <div>
@@ -49,7 +78,7 @@
             </h2>
         </div>
     </section>
-    <script src="index.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
