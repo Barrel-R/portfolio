@@ -1,83 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="styles.css" />
-    <title>Portfolio</title>
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of a fast-learning, solo developer skilled in Laravel, Vue.js, Go, and more.">
+    <meta name="keywords" content="developer, portfolio, Laravel, Vue.js, Go, freelance, remote">
+    <meta name="author" content="Henrique Barrel">
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Henrique Barrel | Developer Portfolio</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body>
-    <nav class="navbar">
-        <a href="#projects" class="nav-link">
-            <span>Projects</span>
-            <!--  insert svg -->
-        </a>
-        <a href="#about" class="nav-link">
-            <span>About</span>
-            <!--  insert svg -->
-        </a>
-        <a href="#contact" class="nav-link">
-            <span>Contact</span>
-            <!--  insert svg -->
-        </a>
-    </nav>
-    <section id="about" class="about">
-        <div>
-            <h2>
-                #<span>About me</span>
-            </h2>
-        </div>
-    </section>
-    <section id="projects" class="projects">
-        <h2>#Projects</span></h2>
-        <article class="project-container" x-data="{ open: false }">
-            <h3 class="project-title">Purchase order system in Laravel and Vue.js</h3>
-            <p class="project-description">
-                My most complex project yet, containing multiple related models and
-                relationships, asynchronous data loading, caching with custom invalidation,
-                unit tests, automated tasks, and more, design patterns like Strategy and
-                Observer, and more.
-            </p>
-            <button @click="open = !open">Open details</button>
-            <div class="project-details" x-show="open">
-                <ul>
-                    <span>Languages and Tools:</span>
-                        <li>Laravel</li>
-                        <li>PHP</li>
-                        <li>PestPHP</li>
-                        <li>Vue.js</li>
-                        <li>JavaScript</li>
-                        <li>TailwindCSS</li>
+<body class="bg-brown-900 text-white font-sans">
+    <header class="fixed w-full bg-brown-950/90 backdrop-blur-sm z-50">
+        <div class="container mx-auto px-4">
+            <nav class="py-4">
+                <ul class="flex justify-center space-x-8 md:space-x-12">
+                    <li><a href="#projects" class="nav-link relative">Projects</a></li>
+                    <li><a href="#about" class="nav-link relative">About</a></li>
+                    <li><a href="#contact" class="nav-link relative">Contact</a></li>
                 </ul>
-                <span>Complexity: 5/5</span>
-            </div>
-        </article>
-        <article class="project-container">
-            <h3 class="project-title">Excel sheet parsing to Word Document in Go</h3>
-            <p class="project-description">
-                This project was build in wails, to parse excel sheet, read data
-                by row and create a word document if the row contains valid data,
-                later organizing each document by company number
-            </p>
-        </article>
-        <article class="project-container">
-            <h3 class="project-title">Automatic image insertion in excel column</h3>
-            <p class="project-description">
-                It was a quick demand to insert many images in an excel column, in
-                the correct cell according to each product. I used python with
-                openpyxl to read and write the data to the sheet, and pandas to
-                handle the sheet data.
-            </p>
-        </article>
-    </section>
-    <section id="contact" class="Contact">
-        <div>
-            <h2>
-                #<span>Contact</span>
-            </h2>
+            </nav>
         </div>
-    </section>
+    </header>
+
+    <main>
+        <section id="hero"
+            class="min-h-screen flex items-center justify-center bg-gradient-to-b from-brown-900 to-brown-950">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4 tracking-tight">
+                    Hi, I'm <span class="text-beige-300">Henrique Barrel</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-beige-200 max-w-2xl mx-auto leading-relaxed">
+                    A fast-learning developer who builds quality software solo.
+                </p>
+                <div class="mt-12">
+                    <a href="#projects" class="btn-primary">View My Work</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 bg-brown-800">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">Projects</h2>
+                <div class="grid md:grid-cols-2 gap-8 mt-12">
+                    <article class="project-card" x-data="{ open: false }">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">Purchase Order System</h3>
+                            <p class="text-beige-200 mb-6">
+                                A complex, solo-built web app with Laravel and Vue.js—featuring multiple models, async
+                                data loading,
+                                caching, unit tests, and design patterns like Strategy and Observer.
+                            </p>
+                            <button @click="open = !open" class="btn-outline flex items-center" aria-expanded="false"
+                                x-bind:aria-expanded="open">
+                                <span>Details</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform"
+                                    :class="open ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="project-details mt-6" x-show="open" x-transition x-cloak>
+                                <ul class="space-y-2 text-white">
+                                    <li><span class="text-beige-300 font-medium">Tools:</span> Laravel, PHP, PestPHP,
+                                        Vue.js, JavaScript, TailwindCSS</li>
+                                    <li><span class="text-beige-300 font-medium">Complexity:</span> 5/5</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">Excel to Word Converter</h3>
+                            <p class="text-beige-200 mb-6">
+                                A desktop tool built solo with Go and Wails to parse Excel sheets and generate organized
+                                Word
+                                documents by company number.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="tech-tag">Go</span>
+                                <span class="tech-tag">Wails</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">Image Insertion in Excel</h3>
+                            <p class="text-beige-200 mb-6">
+                                A quick Python script using openpyxl and pandas to insert images into an Excel column
+                                based on
+                                product data.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">openpyxl</span>
+                                <span class="tech-tag">pandas</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">Real-Time Chat App <span
+                                    class="text-beige-300 text-sm font-normal">(WIP)</span></h3>
+                            <p class="text-beige-200 mb-6">
+                                A solo-built chat app—learned Go, WebSockets, and Redis in weeks to deliver real-time
+                                messaging.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="tech-tag">Go</span>
+                                <span class="tech-tag">WebSockets</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">HTML/CSS</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="py-24 bg-brown-900">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">Languages & Tools</h2>
+                <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-12">
+                    <span class="skill-pill">Laravel</span>
+                    <span class="skill-pill">PHP</span>
+                    <span class="skill-pill">Vue.js</span>
+                    <span class="skill-pill">JavaScript</span>
+                    <span class="skill-pill">TailwindCSS</span>
+                    <span class="skill-pill">Go</span>
+                    <span class="skill-pill">Wails</span>
+                    <span class="skill-pill">WebSockets</span>
+                    <span class="skill-pill">Redis</span>
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">openpyxl</span>
+                    <span class="skill-pill">pandas</span>
+                    <span class="skill-pill">PestPHP</span>
+                    <span class="skill-pill">HTML/CSS</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 bg-brown-800">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">About Me</h2>
+                <div class="max-w-3xl mx-auto mt-12">
+                    <p class="text-beige-200 text-lg leading-relaxed text-center">
+                        I'm a self-driven developer who thrives on learning fast and building software independently.
+                        From
+                        complex web apps in Laravel and Vue.js to desktop tools with Go and Wails, I deliver quality
+                        solutions
+                        tailored to the challenge. My latest project? A real-time chat app built from scratch in weeks.
+                        Let's
+                        create something great together.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 bg-gradient-to-b from-brown-900 to-brown-950">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="section-title">Contact</h2>
+                <p class="text-beige-200 text-lg max-w-2xl mx-auto mt-8">
+                    Need a versatile developer who can jump in and deliver? Reach out!
+                </p>
+                <div class="mt-10">
+                    <a href="mailto:henriquebarrel@gmail.com" class="btn-primary">Email Me</a>
+                </div>
+                <ul class="flex justify-center gap-8 mt-10">
+                    <li>
+                        <a href="https://linkedin.com/in/henrique-barrel" target="_blank" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Barrel-R" target="_blank" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            <span class="sr-only">GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-6 bg-brown-950 text-beige-300 text-center text-sm">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Henrique Barrel. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 
