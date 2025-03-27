@@ -9,8 +9,9 @@
     <meta name="keywords" content="developer, portfolio, Laravel, Vue.js, Go, freelance, remote">
     <meta name="author" content="Henrique Barrel">
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <title>Henrique Barrel | Developer Portfolio</title>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </head>
 
 <body class="bg-brown-900 text-white font-sans">
@@ -46,7 +47,8 @@
             <div class="container mx-auto px-4">
                 <h2 class="section-title">Projects</h2>
                 <div class="grid md:grid-cols-2 gap-8 mt-12">
-                    <article class="project-card" x-data="{ open: false }">
+
+                    <article class="project-card">
                         <div class="p-8">
                             <h3 class="text-2xl font-serif font-bold mb-3 text-white">Purchase Order System</h3>
                             <p class="text-beige-200 mb-6">
@@ -54,22 +56,56 @@
                                 data loading,
                                 caching, unit tests, and design patterns like Strategy and Observer.
                             </p>
-                            <button @click="open = !open" class="btn-outline flex items-center" aria-expanded="false"
-                                x-bind:aria-expanded="open">
-                                <span>Details</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform"
-                                    :class="open ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="project-details mt-6" x-show="open" x-transition x-cloak>
-                                <ul class="space-y-2 text-white">
-                                    <li><span class="text-beige-300 font-medium">Tools:</span> Laravel, PHP, PestPHP,
-                                        Vue.js, JavaScript, TailwindCSS</li>
-                                    <li><span class="text-beige-300 font-medium">Complexity:</span> 5/5</li>
-                                </ul>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">PestPHP</span>
+                                <span class="tech-tag">TailwindCSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">News Blog with Fidelity Program
+                            </h3>
+                            <p class="text-beige-200 mb-6">
+                                An interactive enterprise blog with social-media-like features (likes, comments),
+                                WYSIWYG editor for posts, and real-time point-transactions in a fidelity program to
+                                use in the company's products
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">PestPHP</span>
+                                <span class="tech-tag">TailwindCSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">Artisan Books Catalogue</h3>
+                            <p class="text-beige-200 mb-6">
+                                An elegant, simple and well-designed website to display a catalogue
+                                of handmade children books.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">PestPHP</span>
+                                <span class="tech-tag">TailwindCSS</span>
                             </div>
                         </div>
                     </article>
@@ -79,12 +115,13 @@
                             <h3 class="text-2xl font-serif font-bold mb-3 text-white">Excel to Word Converter</h3>
                             <p class="text-beige-200 mb-6">
                                 A desktop tool built solo with Go and Wails to parse Excel sheets and generate organized
-                                Word
-                                documents by company number.
+                                Word documents by company number, automating hours of manual labor.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-4">
                                 <span class="tech-tag">Go</span>
                                 <span class="tech-tag">Wails</span>
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">TailwindCSS</span>
                             </div>
                         </div>
                     </article>
@@ -93,14 +130,13 @@
                         <div class="p-8">
                             <h3 class="text-2xl font-serif font-bold mb-3 text-white">Image Insertion in Excel</h3>
                             <p class="text-beige-200 mb-6">
-                                A quick Python script using openpyxl and pandas to insert images into an Excel column
-                                based on
-                                product data.
+                                A quick Python script using openpyxl and pandas to insert a hight number of images
+                                into an Excel column based on product data.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-4">
                                 <span class="tech-tag">Python</span>
-                                <span class="tech-tag">openpyxl</span>
-                                <span class="tech-tag">pandas</span>
+                                <span class="tech-tag">Openpyxl</span>
+                                <span class="tech-tag">Pandas</span>
                             </div>
                         </div>
                     </article>
@@ -116,6 +152,7 @@
                             <div class="flex flex-wrap gap-2 mt-4">
                                 <span class="tech-tag">Go</span>
                                 <span class="tech-tag">WebSockets</span>
+                                <span class="tech-tag">JavaScript</span>
                                 <span class="tech-tag">Redis</span>
                                 <span class="tech-tag">HTML/CSS</span>
                             </div>
@@ -139,8 +176,8 @@
                     <span class="skill-pill">WebSockets</span>
                     <span class="skill-pill">Redis</span>
                     <span class="skill-pill">Python</span>
-                    <span class="skill-pill">openpyxl</span>
-                    <span class="skill-pill">pandas</span>
+                    <span class="skill-pill">Openpyxl</span>
+                    <span class="skill-pill">Pandas</span>
                     <span class="skill-pill">PestPHP</span>
                     <span class="skill-pill">HTML/CSS</span>
                 </div>
@@ -153,12 +190,22 @@
                 <div class="max-w-3xl mx-auto mt-12">
                     <p class="text-beige-200 text-lg leading-relaxed text-center">
                         I'm a self-driven developer who thrives on learning fast and building software independently.
-                        From
-                        complex web apps in Laravel and Vue.js to desktop tools with Go and Wails, I deliver quality
-                        solutions
-                        tailored to the challenge. My latest project? A real-time chat app built from scratch in weeks.
-                        Let's
-                        create something great together.
+                        From complex web apps in Laravel and Vue.js to desktop tools with Go and Wails, I deliver
+                        quality solutions tailored to the challenge.
+                        Let's create something great together.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="personality" class="py-24 bg-brown-900">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">My Developer Philosophy</h2>
+                <div class="max-w-3xl mx-auto mt-12">
+                    <p class="text-beige-200 text-lg leading-relaxed text-center">
+                        I like building software the simplest way possible, avoiding bloat and unnecessary dependencies.
+                        I build software to fit the resources and needs: unless it's proven that it needs to scale,
+                        there's no need to pre-optimize it. Simple software gets delivered fast, works well,
+                        and saves you headaches.
                     </p>
                 </div>
             </div>
@@ -207,5 +254,7 @@
 
     <script src="main.js"></script>
 </body>
+
+</html>
 
 </html>
