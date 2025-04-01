@@ -53,123 +53,516 @@
         <section id="projects" class="py-24 bg-brown-800">
             <div class="container">
                 <h2 class="section-title" data-i18n="projects.header">Projects</h2>
-                <div class="grid md:grid-cols-2 gap-8 mt-12">
+                <div class="grid md:grid-cols-2 gap-8 mt-12" id="projects">
 
-                    <article class="project-card">
-                        <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white"
-                                data-i18n="projects.title.purchase">Purchase Order System</h3>
-                            <p class="text-beige-200 mb-6" data-i18n="projects.description.purchase">
-                                A complex, solo-built web app with Laravel and Vue.js—featuring multiple models, async
-                                data loading,
-                                caching, unit tests, and design patterns like Strategy and Observer.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">Laravel</span>
-                                <span class="tech-tag">Vue.js</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Redis</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">PestPHP</span>
-                                <span class="tech-tag">TailwindCSS</span>
+                    <div x-data="{ open: false }">
+                        <!-- Purchase Modal -->
+                        <div x-show="open" class="modal-overlay" x-transition.opacity.duration.300ms>
+                            <div class="modal" x-bind:class="open ? 'show' : 'hidden'"
+                                @click.outside="open = false;document.body.style.overflow = 'auto'">
+                                <h2 class="text-xl font-serif font-bold" data-i18n="projects.title.purchase">
+                                    Purchase Order System
+                                </h2>
+                                <div class="modal-content mt-8 text-beige-200 space-y-8">
+                                    <div>
+                                        <h3 class="font-bold">Link</h3>
+                                        <p data-i18n="projects.private" class="modal-text">
+                                            This project is private.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.why_title">Why It Was Needed</h3>
+                                        <p data-i18n="projects.why.purchase" class="modal-text">
+                                            The company needed a centralized system to streamline purchase order
+                                            management across multiple stores and suppliers, replacing error-prone
+                                            manual processes.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.difficulties_title">Difficulties</h3>
+                                        <p data-i18n="projects.difficulties.purchase" class="modal-text">
+                                            Integrating with a poorly documented legacy API and ensuring real-time
+                                            performance across large datasets while working solo was a major
+                                            challenge.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.solutions_title">
+                                            How I Overcame Them
+                                        </h3>
+                                        <p data-i18n="projects.solutions.purchase" class="modal-text">
+                                            Separated the most important, highly complex page into small parts so
+                                            each would work individually, making the overall simpler and easier to
+                                            understand or refactor, used Redis for caching,
+                                            used laravel's new Concurrency feature for document generation, jobs and
+                                            scheduled tasks to streamline the process and keep data synchronized.
+                                            Also and leveraged Vue.js for async updates,
+                                            prioritizing testable core features.
+
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.learned_title">What I Learned</h3>
+                                        <p data-i18n="projects.learned.purchase" class="modal-text">
+                                            Learned how to deal with legacy and complex API, how to architecture a
+                                            complex project, and gained confidence in solo-building performant
+                                            systems.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.images">Images</h3>
+                                        <p data-i18n="tbi" class="modal-text">
+                                            To be implemented.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="close-btn" @click="open = false;document.body.style.overflow = 'auto'">
+                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="#FFFFFF"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                    </article>
+                        <article class="project-card" @click="open = true;document.body.style.overflow = 'hidden'">
+                            <div class="p-8 ">
+                                <h3 class="text-2xl font-serif font-bold mb-3 text-white"
+                                    data-i18n="projects.title.purchase">Purchase Order System</h3>
+                                <p class="text-beige-200 mb-6" data-i18n="projects.description.purchase">
+                                    A complex, solo-built web app with Laravel and Vue.js—featuring multiple models,
+                                    async
+                                    data loading,
+                                    caching, unit tests, and design patterns like Strategy and Observer.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">Laravel</span>
+                                    <span class="tech-tag">Vue.js</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Redis</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">PestPHP</span>
+                                    <span class="tech-tag">TailwindCSS</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
 
-                    <article class="project-card">
-                        <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white" data-i18n="projects.title.news">
-                                News Blog with Fidelity Program
-                            </h3>
-                            <p class="text-beige-200 mb-6" data-i18n="projects.description.news">
-                                An interactive enterprise blog with social-media-like features (likes, comments),
-                                WYSIWYG editor for posts, and real-time point-transactions in a fidelity program to
-                                use in the company's products
-                            </p>
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">Laravel</span>
-                                <span class="tech-tag">Vue.js</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Redis</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">PestPHP</span>
-                                <span class="tech-tag">TailwindCSS</span>
+                    <div x-data="{ open: false }">
+                        <!-- News Modal -->
+                        <div x-show="open" class="modal-overlay" x-transition.opacity.duration.300ms>
+                            <div class="modal" x-bind:class="open ? 'show' : 'hidden'"
+                                @click.outside="open = false;document.body.style.overflow = 'auto'">
+                                <h2 class="text-xl font-serif font-bold" data-i18n="projects.title.news">
+                                    News Blog with Fidelity Program
+                                </h2>
+                                <div class="modal-content mt-8 text-beige-200 space-y-8">
+                                    <div>
+                                        <h3 class="font-bold">Link</h3>
+                                        <p data-i18n="projects.private" class="modal-text">
+                                            This project is private.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.why_title">Why It Was Needed</h3>
+                                        <p data-i18n="projects.why.news" class="modal-text">
+                                            The company wanted an engaging internal platform to share updates, foster
+                                            employee interaction, and incentivize engagement and sales through a
+                                            points-based loyalty system.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.difficulties_title">Difficulties</h3>
+                                        <p data-i18n="projects.difficulties.news" class="modal-text">
+                                            Balancing real-time point transactions with a responsive UI, plus
+                                            integrating an legacy API posed technical hurdles.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.solutions_title">
+                                            How I Overcame Them
+                                        </h3>
+                                        <p data-i18n="projects.solutions.news" class="modal-text">
+                                            Integrated Redis for real-time points, sanitized WYSIWYG inputs with a
+                                            custom filter, and optimized the frontend with Vue.js reactivity.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.learned_title">What I Learned</h3>
+                                        <p data-i18n="projects.learned.news" class="modal-text">
+                                            Mastered design patterns (Strategy, Observer), and learned to balance
+                                            interactivity and security in real-time apps.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.images">Images</h3>
+                                        <p data-i18n="tbi" class="modal-text">
+                                            To be implemented.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="close-btn" @click="open = false;document.body.style.overflow = 'auto'">
+                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="#FFFFFF"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                    </article>
+                        <article @click="open=true;document.body.style.overflow = 'hidden'" class="project-card">
+                            <div class="p-8">
+                                <h3 class="text-2xl font-serif font-bold mb-3 text-white"
+                                    data-i18n="projects.title.news">
+                                    News Blog with Fidelity Program
+                                </h3>
+                                <p class="text-beige-200 mb-6" data-i18n="projects.description.news">
+                                    An interactive enterprise blog with social-media-like features (likes, comments),
+                                    WYSIWYG editor for posts, and real-time point-transactions in a fidelity program to
+                                    use in the company's products
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">Laravel</span>
+                                    <span class="tech-tag">Vue.js</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Redis</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">PestPHP</span>
+                                    <span class="tech-tag">TailwindCSS</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
 
-                    <article class="project-card">
-                        <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white" data-i18n="projects.title.books">
-                                Artisan Books Catalogue</h3>
-                            <p class="text-beige-200 mb-6" data-i18n="projects.description.books">
-                                An elegant, simple and well-designed website to display a catalogue
-                                of handmade children books.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">Laravel</span>
-                                <span class="tech-tag">Vue.js</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">PestPHP</span>
-                                <span class="tech-tag">TailwindCSS</span>
+                    <div x-data="{ open: false }">
+                        <!-- Books Modal -->
+                        <div x-show="open" class="modal-overlay" x-transition.opacity.duration.300ms>
+                            <div class="modal" x-bind:class="open ? 'show' : 'hidden'"
+                                @click.outside="open = false;document.body.style.overflow = 'auto'">
+                                <h2 class="text-xl font-serif font-bold" data-i18n="projects.title.books">
+                                    Artisan Books Catalogue
+                                </h2>
+                                <div class="modal-content mt-8 text-beige-200 space-y-8">
+                                    <div>
+                                        <a href="https://github.com/Barrel-R/artisan-books" target="_blank"
+                                            class="modal-link">Link</a>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.why_title">Why It Was Needed</h3>
+                                        <p data-i18n="projects.why.books" class="modal-text">
+                                            A small business needed an online presence to showcase their unique handmade
+                                            children’s books to attract customers and simplify orders.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.difficulties_title">Difficulties</h3>
+                                        <p data-i18n="projects.difficulties.books" class="modal-text">
+                                            Designing an intuitive, visually appealing layout while keeping it simple
+                                            for non-tech-savvy owners or children was tricky.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.solutions_title">
+                                            How I Overcame Them
+                                        </h3>
+                                        <p data-i18n="projects.solutions.books" class="modal-text">
+                                            Used TailwindCSS for a responsive, elegant design and Laravel’s simplicity
+                                            for a lightweight backend, with clear admin docs for the owners.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.learned_title">What I Learned</h3>
+                                        <p data-i18n="projects.learned.books" class="modal-text">
+                                            Honed my eye for minimalist design and realized how small, well-crafted
+                                            solutions can delight users and clients alike.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.images">Images</h3>
+                                        <p data-i18n="tbi" class="modal-text">
+                                            To be implemented.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="close-btn" @click="open = false;document.body.style.overflow = 'auto'">
+                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="#FFFFFF"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                    </article>
+                        <article @click="open = true;document.body.style.overflow = 'hidden'" class="project-card">
+                            <div class="p-8">
+                                <h3 class="text-2xl font-serif font-bold mb-3 text-white"
+                                    data-i18n="projects.title.books">
+                                    Artisan Books Catalogue</h3>
+                                <p class="text-beige-200 mb-6" data-i18n="projects.description.books">
+                                    An elegant, simple and well-designed website to display a catalogue
+                                    of handmade children books.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">Laravel</span>
+                                    <span class="tech-tag">Vue.js</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">PestPHP</span>
+                                    <span class="tech-tag">TailwindCSS</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
 
-                    <article class="project-card">
-                        <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white" data-i18n="projects.title.excel">
-                                Excel to Word Generator</h3>
-                            <p class="text-beige-200 mb-6" data-i18n="projects.description.excel">
-                                A desktop tool built solo with Go and Wails to parse Excel sheets and generate organized
-                                Word documents by company number, automating hours of manual labor.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="tech-tag">Go</span>
-                                <span class="tech-tag">Wails</span>
-                                <span class="tech-tag">Vue.js</span>
-                                <span class="tech-tag">TailwindCSS</span>
+                    <div x-data="{ open: false }">
+                        <!-- Excel Modal -->
+                        <div x-show="open" class="modal-overlay" x-transition.opacity.duration.300ms>
+                            <div class="modal" x-bind:class="open ? 'show' : 'hidden'"
+                                @click.outside="open = false;document.body.style.overflow = 'auto'">
+                                <h2 class="text-xl font-serif font-bold" data-i18n="projects.title.excel">
+                                    Excel to Word Generator
+                                </h2>
+                                <div class="modal-content mt-8 text-beige-200 space-y-8">
+                                    <div>
+                                        <h3 class="font-bold">Link</h3>
+                                        <p data-i18n="projects.private" class="modal-text">
+                                            This project is private.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.why_title">Why It Was Needed</h3>
+                                        <p data-i18n="projects.why.excel" class="modal-text">
+                                            A team required a tool to automate generating formatted Word reports from
+                                            Excel data, eliminating tedious copy-paste work across hundreds of entries.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.difficulties_title">Difficulties</h3>
+                                        <p data-i18n="projects.difficulties.excel" class="modal-text">
+                                            It was my first time using Wails and experimenting with Go, so adapting to
+                                            their ecosystems while parsing Excel formats and generating styled Word
+                                            documents was a steep learning curve.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.solutions_title">
+                                            How I Overcame Them
+                                        </h3>
+                                        <p data-i18n="projects.solutions.excel" class="modal-text">
+                                            Developed a Go parser with Wails for a native UI, mapping Excel data to Word
+                                            templates with dynamic formatting, tested across sample files.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.learned_title">What I Learned</h3>
+                                        <p data-i18n="projects.learned.excel" class="modal-text">
+                                            Deepened my Go skills and discovered the power of desktop apps for niche
+                                            automation tasks—simplicity can transform workflows.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.images">Images</h3>
+                                        <p data-i18n="tbi" class="modal-text">
+                                            To be implemented.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="close-btn" @click="open = false;document.body.style.overflow = 'auto'">
+                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="#FFFFFF"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                    </article>
+                        <article @click="open = true;document.body.style.overflow = 'hidden'" class="project-card">
+                            <div class="p-8">
+                                <h3 class="text-2xl font-serif font-bold mb-3 text-white"
+                                    data-i18n="projects.title.excel">
+                                    Excel to Word Generator</h3>
+                                <p class="text-beige-200 mb-6" data-i18n="projects.description.excel">
+                                    A desktop tool built solo with Go and Wails to parse Excel sheets and generate
+                                    organized
+                                    Word documents by company number, automating hours of manual labor.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="tech-tag">Go</span>
+                                    <span class="tech-tag">Wails</span>
+                                    <span class="tech-tag">Vue.js</span>
+                                    <span class="tech-tag">TailwindCSS</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
 
-                    <article class="project-card">
-                        <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white" data-i18n="projects.title.images">
-                                Automatic Excel Image Inserter</h3>
-                            <p class="text-beige-200 mb-6" data-i18n="projects.description.images">
-                                A quick Python script using openpyxl and pandas to insert a hight number of images
-                                into an Excel column based on product data.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Openpyxl</span>
-                                <span class="tech-tag">Pandas</span>
+                    <div x-data="{ open: false }">
+                        <!-- Images Modal -->
+                        <div x-show="open" class="modal-overlay" x-transition.opacity.duration.300ms>
+                            <div class="modal" x-bind:class="open ? 'show' : 'hidden'"
+                                @click.outside="open = false;document.body.style.overflow = 'auto'">
+                                <h2 class="text-xl font-serif font-bold" data-i18n="projects.title.images">
+                                    Automatic Excel Image Inserter
+                                </h2>
+                                <div class="modal-content mt-8 text-beige-200 space-y-8">
+                                    <div>
+                                        <h3 class="font-bold">Link</h3>
+                                        <p data-i18n="projects.private" class="modal-text">
+                                            This project is private.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.why_title">Why It Was Needed</h3>
+                                        <p data-i18n="projects.why.images" class="modal-text">
+                                            A sudden presentation appeared, neededing a high number of product images in
+                                            an existing sheet, which was impractical to do manually.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.difficulties_title">Difficulties</h3>
+                                        <p data-i18n="projects.difficulties.images" class="modal-text">
+                                            Handling large image batches and matching them accurately to product code
+                                            with the correct image dimensions for display demanded efficient scripting.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.solutions_title">
+                                            How I Overcame Them
+                                        </h3>
+                                        <p data-i18n="projects.solutions.images" class="modal-text">
+                                            Quickly wrote a Python script with pandas for data matching and openpyxl for
+                                            image insertion, batching operations to avoid memory issues.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.learned_title">What I Learned</h3>
+                                        <p data-i18n="projects.learned.images" class="modal-text">
+                                            Improved my Python efficiency and learned to optimize scripts for real-world
+                                            constraints like memory and speed.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.images">Images</h3>
+                                        <p data-i18n="tbi" class="modal-text">
+                                            To be implemented.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="close-btn" @click="open = false;document.body.style.overflow = 'auto'">
+                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="#FFFFFF"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                    </article>
+                        <article @click="open = true;document.body.style.overflow = 'hidden'" class="project-card">
+                            <div class="p-8">
+                                <h3 class="text-2xl font-serif font-bold mb-3 text-white"
+                                    data-i18n="projects.title.images">
+                                    Automatic Excel Image Inserter</h3>
+                                <p class="text-beige-200 mb-6" data-i18n="projects.description.images">
+                                    A quick Python script using openpyxl and pandas to insert a hight number of images
+                                    into an Excel column based on product data.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Openpyxl</span>
+                                    <span class="tech-tag">Pandas</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
 
-                    <article class="project-card">
-                        <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white" data-i18n="projects.title.chat">
-                                Real-Time Chat App <span class="text-beige-300 text-sm font-normal">(WIP)</span></h3>
-                            <p class="text-beige-200 mb-6" data-i18n="projects.description.chat">
-                                A solo-built chat-app with Go, WebSockets, and Redis in weeks to deliver real-time
-                                messaging.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="tech-tag">Go</span>
-                                <span class="tech-tag">WebSockets</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Redis</span>
-                                <span class="tech-tag">HTML/CSS</span>
+                    <div x-data="{ open: false }">
+                        <!-- Chat Modal -->
+                        <div x-show="open" class="modal-overlay" x-transition.opacity.duration.300ms>
+                            <div class="modal" x-bind:class="open ? 'show' : 'hidden'"
+                                @click.outside="open = false;document.body.style.overflow = 'auto'">
+                                <h2 class="text-xl font-serif font-bold" data-i18n="projects.title.chat">
+                                    Real-Time Chat App
+                                </h2>
+                                <div class="modal-content mt-8 text-beige-200 space-y-8">
+                                    <div>
+                                        <a href="https://github.com/Barrel-R/go-chatapp" target="_blank"
+                                            class="modal-link">Link</a>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.why_title">Why It Was Needed</h3>
+                                        <p data-i18n="projects.why.chat" class="modal-text">
+                                            I wanted to improve my knowledge about concurrency in Go, while also
+                                            learning how Redis' Pub/Sub and queues would interact with it.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.difficulties_title">Difficulties</h3>
+                                        <p data-i18n="projects.difficulties.chat" class="modal-text">
+                                            chat: "Implementing WebSockets for real-time messaging with low latency,
+                                            while ensuring scalability on a tight timeline, stretched my limits.",
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.solutions_title">
+                                            How I Overcame Them
+                                        </h3>
+                                        <p data-i18n="projects.solutions.chat" class="modal-text">
+                                            Deployed Go with WebSockets for low-latency messaging, backed by
+                                            Redis for session persistence, and stress-tested it in weeks.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.learned_title">What I Learned</h3>
+                                        <p data-i18n="projects.learned.chat" class="modal-text">
+                                            Expanded my knowledge around Go and concurrency, also understood more about
+                                            how WebSockets work.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold" data-i18n="modal.images">Images</h3>
+                                        <p data-i18n="tbi" class="modal-text">
+                                            To be implemented.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="close-btn" @click="open = false;document.body.style.overflow = 'auto'">
+                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="#FFFFFF"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                    </article>
+                        <article @click="open = true;document.body.style.overflow = 'hidden'" class="project-card">
+                            <div class="p-8">
+                                <h3 class="text-2xl font-serif font-bold mb-3 text-white"
+                                    data-i18n="projects.title.chat">
+                                    Real-Time Chat App <span class="text-beige-300 text-sm font-normal">(WIP)</span>
+                                </h3>
+                                <p class="text-beige-200 mb-6" data-i18n="projects.description.chat">
+                                    A solo-built chat-app with Go, WebSockets, and Redis in weeks to deliver real-time
+                                    messaging.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="tech-tag">Go</span>
+                                    <span class="tech-tag">WebSockets</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Redis</span>
+                                    <span class="tech-tag">HTML/CSS</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
