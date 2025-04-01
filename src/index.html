@@ -10,7 +10,7 @@
     <meta name="author" content="Henrique Barrel">
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <title>Henrique Barrel | Developer Portfolio</title>
+    <title data-i18n="title">Henrique Barrel | Developer Portfolio</title>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </head>
 
@@ -19,10 +19,17 @@
         <div class="container mx-auto px-4">
             <nav class="py-4">
                 <ul class="flex justify-center space-x-8 md:space-x-12">
-                    <li><a href="#projects" class="nav-link relative">Projects</a></li>
-                    <li><a href="#about" class="nav-link relative">About</a></li>
-                    <li><a href="#contact" class="nav-link relative">Contact</a></li>
+                    <li><a href="#projects" class="nav-link relative" data-i18n="nav_projects">Projects</a></li>
+                    <li><a href="#about" class="nav-link relative" data-i18n="nav_about">About</a></li>
+                    <li><a href="#contact" class="nav-link relative" data-i18n="nav_contact">Contact</a></li>
                 </ul>
+                <div>
+                    <select id="lang-select">
+                        <option value="en" data-i18n="option_en" selected>English</option>
+                        <option value="pt" data-i18n="option_pt">Portuguese</option>
+                        <option value="es" data-i18n="option_es">Spanish</option>
+                    </select>
+                </div>
             </nav>
         </div>
     </header>
@@ -31,27 +38,29 @@
         <section id="hero"
             class="min-h-screen flex items-center justify-center bg-gradient-to-b from-brown-900 to-brown-950">
             <div class="container mx-auto px-4 text-center">
-                <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4 tracking-tight">
-                    Hi, I'm <span class="text-beige-300">Henrique Barrel</span>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4 tracking-tight" data-i18n="hero_hi">
+                    Hi, I'm <span class="text-beige-300" data-i18n="hero_name">Henrique Barrel</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-beige-200 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-xl md:text-2xl text-beige-200 max-w-2xl mx-auto leading-relaxed"
+                    data-i18n="hero_description">
                     A fast-learning developer who builds quality software solo.
                 </p>
                 <div class="mt-12">
-                    <a href="#projects" class="btn-primary">View My Work</a>
+                    <a href="#projects" class="btn-primary" data-i18n="hero_link">View My Work</a>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="py-24 bg-brown-800">
             <div class="container mx-auto px-4">
-                <h2 class="section-title">Projects</h2>
+                <h2 class="section-title" data-i18n="projects_title">Projects</h2>
                 <div class="grid md:grid-cols-2 gap-8 mt-12">
 
                     <article class="project-card">
                         <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">Purchase Order System</h3>
-                            <p class="text-beige-200 mb-6">
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white"
+                                data-i18n="project_title_purchase">Purchase Order System</h3>
+                            <p class="text-beige-200 mb-6" data-i18n="project_description_purchase">
                                 A complex, solo-built web app with Laravel and Vue.js—featuring multiple models, async
                                 data loading,
                                 caching, unit tests, and design patterns like Strategy and Observer.
@@ -71,9 +80,10 @@
 
                     <article class="project-card">
                         <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">News Blog with Fidelity Program
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white" data-i18n="project_title_news">
+                                News Blog with Fidelity Program
                             </h3>
-                            <p class="text-beige-200 mb-6">
+                            <p class="text-beige-200 mb-6" data-i18n="project_description_news">
                                 An interactive enterprise blog with social-media-like features (likes, comments),
                                 WYSIWYG editor for posts, and real-time point-transactions in a fidelity program to
                                 use in the company's products
@@ -93,8 +103,9 @@
 
                     <article class="project-card">
                         <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">Artisan Books Catalogue</h3>
-                            <p class="text-beige-200 mb-6">
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white" data-i18n="project_title_books">
+                                Artisan Books Catalogue</h3>
+                            <p class="text-beige-200 mb-6" data-i18n="project_description_books">
                                 An elegant, simple and well-designed website to display a catalogue
                                 of handmade children books.
                             </p>
@@ -112,8 +123,9 @@
 
                     <article class="project-card">
                         <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">Excel to Word Converter</h3>
-                            <p class="text-beige-200 mb-6">
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white" data-i18n="project_title_excel">
+                                Excel to Word Converter</h3>
+                            <p class="text-beige-200 mb-6" data-i18n="project_description_excel">
                                 A desktop tool built solo with Go and Wails to parse Excel sheets and generate organized
                                 Word documents by company number, automating hours of manual labor.
                             </p>
@@ -128,8 +140,9 @@
 
                     <article class="project-card">
                         <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">Image Insertion in Excel</h3>
-                            <p class="text-beige-200 mb-6">
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white" data-i18n="project_title_images">
+                                Image Insertion in Excel</h3>
+                            <p class="text-beige-200 mb-6" data-i18n="project_description_images">
                                 A quick Python script using openpyxl and pandas to insert a hight number of images
                                 into an Excel column based on product data.
                             </p>
@@ -143,9 +156,9 @@
 
                     <article class="project-card">
                         <div class="p-8">
-                            <h3 class="text-2xl font-serif font-bold mb-3 text-white">Real-Time Chat App <span
-                                    class="text-beige-300 text-sm font-normal">(WIP)</span></h3>
-                            <p class="text-beige-200 mb-6">
+                            <h3 class="text-2xl font-serif font-bold mb-3 text-white" data-i18n="project_title_chat">
+                                Real-Time Chat App <span class="text-beige-300 text-sm font-normal">(WIP)</span></h3>
+                            <p class="text-beige-200 mb-6" data-i18n="project_description_chat">
                                 A solo-built chat app—learned Go, WebSockets, and Redis in weeks to deliver real-time
                                 messaging.
                             </p>
@@ -164,7 +177,7 @@
 
         <section id="tools" class="py-24 bg-brown-900">
             <div class="container mx-auto px-4">
-                <h2 class="section-title">Languages & Tools</h2>
+                <h2 class="section-title" data-i18n="languages">Languages & Tools</h2>
                 <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-12">
                     <span class="skill-pill">Laravel</span>
                     <span class="skill-pill">PHP</span>
@@ -186,9 +199,9 @@
 
         <section id="about" class="py-24 bg-brown-800">
             <div class="container mx-auto px-4">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" data-i18n="about_title">About Me</h2>
                 <div class="max-w-3xl mx-auto mt-12">
-                    <p class="text-beige-200 text-lg leading-relaxed text-center">
+                    <p class="text-beige-200 text-lg leading-relaxed text-center" data-i18n="about_description">
                         I'm a self-driven developer who thrives on learning fast and building software independently.
                         From complex web apps in Laravel and Vue.js to desktop tools with Go and Wails, I deliver
                         quality solutions tailored to the challenge.
@@ -199,9 +212,9 @@
         </section>
         <section id="personality" class="py-24 bg-brown-900">
             <div class="container mx-auto px-4">
-                <h2 class="section-title">My Developer Philosophy</h2>
+                <h2 class="section-title" data-i18n="philosophy_title">My Developer Philosophy</h2>
                 <div class="max-w-3xl mx-auto mt-12">
-                    <p class="text-beige-200 text-lg leading-relaxed text-center">
+                    <p class="text-beige-200 text-lg leading-relaxed text-center" data-i18n="philosophy_description">
                         I like building software the simplest way possible, avoiding bloat and unnecessary dependencies.
                         I build software to fit the resources and needs: unless it's proven that it needs to scale,
                         there's no need to pre-optimize it. Simple software gets delivered fast, works well,
@@ -213,11 +226,11 @@
 
         <section id="contact" class="py-24 bg-gradient-to-b from-brown-900 to-brown-950">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="section-title">Contact</h2>
-                <p class="text-beige-200 text-lg max-w-2xl mx-auto mt-8">
+                <h2 class="section-title" data-i18n="contact_title">Contact</h2>
+                <p class="text-beige-200 text-lg max-w-2xl mx-auto mt-8" data-i18n="contact_description">
                     Need a versatile developer who can jump in and deliver? Reach out!
                 </p>
-                <div class="mt-10">
+                <div class="mt-10" data-i18n="email">
                     <a href="mailto:henriquebarrel@gmail.com" class="btn-primary">Email Me</a>
                 </div>
                 <ul class="flex justify-center gap-8 mt-10">
@@ -247,7 +260,7 @@
     </main>
 
     <footer class="py-6 bg-brown-950 text-beige-300 text-center text-sm">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4" data-i18n="credits">
             <p>&copy; 2025 Henrique Barrel. All rights reserved.</p>
         </div>
     </footer>
