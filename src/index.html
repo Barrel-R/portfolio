@@ -471,7 +471,7 @@
                                     data-i18n="projects.title.images">
                                     Automatic Excel Image Inserter</h3>
                                 <p class="text-beige-200 mb-6" data-i18n="projects.description.images">
-                                    A quick Python script using openpyxl and pandas to insert a hight number of images
+                                    A quick Python script using openpyxl and pandas to insert a high number of images
                                     into an Excel column based on product data.
                                 </p>
                                 <div class="flex flex-wrap gap-2 mt-4">
@@ -592,7 +592,7 @@
         <section id="about" class="py-24 bg-brown-800">
             <div class="container">
                 <h2 class="section-title text-beige-100" data-i18n="about.title">About Me</h2>
-                <div class="max-w-3xl mx-auto mt-12">
+                <div class="max-w-85 mx-auto mt-12">
                     <div x-data="{ activeSection: 'work' }" class="about">
                         <div class="btn-container">
                             <button @click="activeSection = 'work'" class="toggle-btn"
@@ -605,79 +605,132 @@
                             </button>
                         </div>
 
-                        <div class="content-container">
-                            <div x-show="activeSection === 'work'" x-transition:enter="transition-slide"
-                                x-transition:enter-start="slide-start" x-transition:enter-end="slide-end"
-                                x-transition:leave="transition-slide" x-transition:leave-start="slide-end"
-                                x-transition:leave-end="slide-out" class="work-section">
-                                <div class="section-block">
-                                    <h3 class="section-subtitle" data-i18n="about.work.goals.title">Current Goals</h3>
-                                    <ul class="about-list">
-                                        <li data-i18n="about.work.goals.remote">Estabilish myself remotely</li>
-                                        <li data-i18n="about.work.goals.sync">Have my own synchronized environment</li>
-                                        <li data-i18n="about.work.goals.place">Get a new place</li>
-                                    </ul>
-                                </div>
-                                <div class="section-block">
-                                    <h3 class="section-subtitle" data-i18n="about.work.ethic.title">Work Ethic</h3>
-                                    <p data-i18n="about.work.ethic.description">
-                                        Focused on efficient, fast and simple code, and delivering value through
-                                        practical solutions
-                                    </p>
-                                </div>
-                                <div class="section-block">
-                                    <h3 class="section-subtitle" data-i18n="about.work.tools.title">Tools I Use</h3>
-                                    <p data-i18n="about.work.tools.description">nvim, tmux, obsidian</p>
-                                </div>
+                        <div x-show="activeSection === 'work'" class="work-section">
+                            <div class="section-block">
+                                <h3 class="section-subtitle" data-i18n="about.work.history.title">Work History</h3>
+                                <ul class="about-list">
+                                    <li data-i18n="about.work.history.start">
+                                        Started programming as a hobby in 2017 (15y)
+                                    </li>
+                                    <li data-i18n="about.work.history.mersan">
+                                        Mersan- Fullstack Developer (07/2022 - current)
+                                    </li>
+                                    <li data-i18n="about.work.history.gamedev"> Gamedev - Started modding minecraft and
+                                        creating my own games (2023)
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="section-block">
+                                <h3 class="section-subtitle" data-i18n="about.work.ethic.title">Work Ethic</h3>
+                                <p data-i18n="about.work.ethic.description">
+                                    Focused on efficient, fast and simple code, and delivering value through
+                                    practical solutions
+                                </p>
+                            </div>
+                            <div class="section-block">
+                                <h3 class="section-subtitle" data-i18n="about.work.goals.title">Current Goals</h3>
+                                <ul class="about-list">
+                                    <li data-i18n="about.work.goals.remote">Estabilish myself remotely</li>
+                                    <li data-i18n="about.work.goals.sync">Create a synchronized dev environment</li>
+                                    <li data-i18n="about.work.goals.place">Get a new place with dedicated workspace</li>
+                                </ul>
+                            </div>
+                            <div class="section-block">
+                                <h3 class="section-subtitle" data-i18n="about.work.tools.title">Technical Stack</h3>
+                                <ul class="about-list">
+                                    <li><strong>Frontend:<strong> Vue.js, Alpine.js, Vanilla JavaScript, Tailwind</li>
+                                    <li><strong>Backend:<strong> Laravel, PHP, Go, Python, Java</li>
+                                    <li><strong>Tools:<strong> Neovim, Tmux, Obsidian</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div x-show="activeSection === 'personal'" class="personal-section">
+                            <div class="section-block">
+                                <h3 class="section-subtitle" data-i18n="about.personal.creative.title">Creative
+                                    Pursuits</h3>
+                                <ul class="about-list">
+                                    <li data-i18n="about.personal.creative.procreate">
+                                        Digital illustration with Procreate
+                                    </li>
+                                    <li data-i18n="about.personal.creative.gamedev">
+                                        Game modding and gamedev
+                                    </li>
+                                    <li data-i18n="about.personal.creative.poems">
+                                        Writing poems
+                                    </li>
+                                </ul>
                             </div>
 
-                            <div x-show="activeSection === 'personal'" x-transition:enter="transition-slide"
-                                x-transition:enter-start="slide-start" x-transition:enter-end="slide-end"
-                                x-transition:leave="transition-slide" x-transition:leave-start="slide-end"
-                                x-transition:leave-end="slide-out" class="personal-section">
-                                <div class="section-block">
-                                    <h3 class="section-subtitle" data-i18n="about.creative.title">Creative Pursuits</h3>
-                                    <ul class="about-list">
-                                        <li data-i18n="about.creative.procreate">
-                                            Digital illustration with Procreate
-                                        </li>
-                                        <li data-i18n="about.creative.gamedev">
-                                            Game modding and gamedev
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="section-block">
+                                <h3 class="section-subtitle" data-i18n="about.personal.obsessions.title">Current
+                                    Obsessions
+                                </h3>
+                                <ul class="about-list">
+                                    <li>Jojo's Bizarre Adventure</li>
+                                    <li>Hatsune Miku</li>
+                                    <li>Kendrick Lamar</li>
+                                    <li>Bocchi the Rock!</li>
+                                    <li data-i18n="about.personal.obsessions.coding">Coding</li>
+                                </ul>
+                            </div>
 
-                                <div class="section-block">
-                                    <h3 class="section-subtitle" data-i18n="about.obssessions.title">Current Obsessions
-                                    </h3>
-                                    <ul class="about-list">
-                                        <li>Hatsune Miku</li>
-                                        <li>Kendrick Lamar</li>
-                                        <li>Bocchi the Rock</li>
-                                        <li data-i18n="about.obesssions.coding">Coding</li>
-                                    </ul>
-                                </div>
-
-                                <div class="section-block">
-                                    <h3 class="section-subtitle" data-i18n="about.music.title">Music</h3>
-                                    <div class="mt-2">
-                                        <ul class="about-list">
-                                            <li>Breakcore (Aeru Ika, Ftlframe, Tokyopill)</li>
-                                            <li>Metal (Trivium, Gojira, Fit For An Autopsy)</li>
-                                            <li>Rap (Kendrick Lamar)</li>
+                            <div class="section-block">
+                                <h3 class="section-subtitle" data-i18n="about.personal.music.title">Music</h3>
+                                <div class="music-subsection">
+                                    <div>
+                                        <h4 class="music-genre">Metal</h4>
+                                        <ul class="about-list artist-list">
+                                            <li>Trivium</li>
+                                            <li>Gojira</li>
+                                            <li>Fit For An Autopsy</li>
+                                            <li>Spiritbox</li>
+                                            <li>Sleep Token</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="music-genre">Breakcore</h4>
+                                        <ul class="about-list artist-list">
+                                            <li>Aeru Ika</li>
+                                            <li>Ftlframe</li>
+                                            <li>Tokyopill</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="music-genre">Sopão</h4>
+                                        <a href="https://open.spotify.com/playlist/2dDj2QJxVqZAVI7WZzu76G?si=fb369ce519124edc"
+                                            class="playlist-link" target="_blank"
+                                            data-i18n="about.personal.music.playlist">
+                                            Spotify playlist
+                                        </a>
+                                        <p class="playlist-description" data-i18n="about.personal.music.sopao">Sopão
+                                            (big soup) is my
+                                            spotify
+                                            playlist that's
+                                            basically an amalgam of all my spotify playlists
+                                            (except for metal because it's too big)
+                                            in one big mix.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h4 class="music-genre">Other</h4>
+                                        <ul class="about-list artist-list">
+                                            <li>Kendrick Lamar</li>
+                                            <li>Gorillaz</li>
+                                            <li>DnB</li>
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="section-block">
-                                    <h3 class="section-subtitle" data-i18n="about.gaming.title">Gaming</h3>
-                                    <ul class="list-disc pl-5 space-y-1">
-                                        <li>Disco Elysium</li>
-                                        <li>Satisfactory</li>
-                                        <li>Hades</li>
-                                        <li>Yakuza series</li>
-                                    </ul>
-                                </div>
+                            <div class="section-block">
+                                <h3 class="section-subtitle" data-i18n="about.personal.gaming.title">Gaming</h3>
+                                <ul class="about-list">
+                                    <li>Hades</li>
+                                    <li>Satisfactory</li>
+                                    <li>Disco Elysium</li>
+                                    <li>Yakuza series</li>
+                                </ul>
                             </div>
                         </div>
                     </div>

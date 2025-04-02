@@ -91,17 +91,47 @@ const localization = {
         about: {
             title: "About Me",
             work: {
-                description: "I'm a self-driven developer who thrives on learning fast and building software \
-                            independently. From complex web apps in Laravel and Vue.js to desktop tools with Go and Wails, \
-                            I deliver quality solutions tailored to the challenge.",
-                tools: "nvim, tmux, obsidian",
-                subtitle: "Work Ethic",
-                ethic: "Focused on efficiency, speed, and delivering value through practical solutions",
+                tools: {
+                    title: "Tools I use",
+                },
+                ethic: {
+                    title: "Work Ethic",
+                    description: "Focused on efficiency, speed, and delivering value through practical solutions",
+                },
+                goals: {
+                    title: "Current Goals",
+                    remote: "Estabilish myself remotely",
+                    sync: "Have my own synchronized environment",
+                    place: "Get a new place with dedicated workspace",
+                },
+                history: {
+                    title: "Work History",
+                    start: "Started programming as a hobby in 2017 (15y)",
+                    mersan: "Mersan - Fullstack Developer (07/2022 - current)",
+                    gamedev: "Started modding minecraft and creating my own games",
+                }
             },
             personal: {
-                subtitle: "My Interests",
-                interests: "Cats, anime, drawing, gaming, writing",
-                music_title: "Music Preferences"
+                creative: {
+                    title: "Creative Pursuits",
+                    procreate: "Digital Illustration with Procreate",
+                    gamedev: "Game modding and gamedev",
+                    poems: "Writing poems",
+                },
+                obsessions: {
+                    title: "Current Obsessions",
+                    coding: "Coding",
+                },
+                music: {
+                    title: "Music",
+                    sopao: "Sopão (big soup) is my spotify playlist that's basically an amalgam\
+                            of all my spotify playlists(except for metal because it's too big) \
+                            in one big mix.",
+                    playlist: "Spotify playlist",
+                },
+                gaming: {
+                    title: "Gaming",
+                },
             },
         },
         philosophy: {
@@ -194,7 +224,49 @@ const localization = {
         languages: "Linguagens & Ferramentas",
         about: {
             title: "Sobre Mim",
-            description: "Sou um desenvolvedor autodidata que aprende rápido e constrói software de forma independente. Desde aplicações web complexas em Laravel e Vue.js até ferramentas desktop com Go e Wails, entrego soluções de qualidade adaptadas ao desafio. Vamos criar algo incrível juntos.",
+            work: {
+                tools: {
+                    title: "Ferramentas Que Uso",
+                },
+                ethic: {
+                    title: "Ética de Trabalho",
+                    description: "Focado em eficiência, velocidade e entregar valor através de soluções práticas",
+                },
+                goals: {
+                    title: "Metas Atuais",
+                    remote: "Estabelecer-me no mercado remoto",
+                    sync: "Criar meu ambiente sincronizado",
+                    place: "Conseguir um novo espaço com área de trabalho dedicada",
+                },
+                history: {
+                    title: "Histórico Profissional",
+                    start: "Comecei a programar como hobby em 2017 (15 anos)",
+                    mersan: "Mersan - Desenvolvedor Fullstack (07/2022 - atual)",
+                    gamedev: "Comecei a modar Minecraft e criar meus próprios jogos",
+                }
+            },
+            personal: {
+                creative: {
+                    title: "Criações",
+                    procreate: "Ilustração Digital com Procreate",
+                    gamedev: "Mods de jogos e desenvolvimento",
+                    poems: "Escrever poemas",
+                },
+                obsessions: {
+                    title: "Obsessões Atuais",
+                    coding: "Programação",
+                },
+                music: {
+                    title: "Música",
+                    sopao: "Sopão é minha playlist do Spotify que basicamente \
+                            mistura todas as minhas outras playlists (exceto metal, porque é grande demais) \
+                            em uma só.",
+                    playlist: "Playlist no Spotify"
+                },
+                gaming: {
+                    title: "Jogos",
+                },
+            },
         },
         philosophy: {
             title: "Minha Filosofia como Desenvolvedor",
@@ -286,7 +358,49 @@ const localization = {
         languages: "Lenguajes y Herramientas",
         about: {
             title: "Sobre Mí",
-            description: "Soy un desarrollador autodidacta que aprende rápido y construye software de forma independiente. Desde aplicaciones web complejas en Laravel y Vue.js hasta herramientas de escritorio con Go y Wails, entrego soluciones de calidad adaptadas a cada desafío. Construyamos algo increíble juntos.",
+            work: {
+                tools: {
+                    title: "Herramientas Que Uso",
+                },
+                ethic: {
+                    title: "Ética de Trabajo",
+                    description: "Enfocado en eficiencia, velocidad y entregar valor a través de soluciones prácticas",
+                },
+                goals: {
+                    title: "Metas Actuales",
+                    remote: "Establecerme en el mercado remoto",
+                    sync: "Tener mi entorno sincronizado",
+                    place: "Conseguir un nuevo espacio con área de trabajo dedicada",
+                },
+                history: {
+                    title: "Historial Profesional",
+                    start: "Empecé a programar como hobby en 2017 (15 años)",
+                    mersan: "Mersan - Desarrollador Fullstack (07/2022 - actual)",
+                    gamedev: "Empecé a modificar Minecraft y crear mis propios juegos",
+                }
+            },
+            personal: {
+                creative: {
+                    title: "Intereses Creativos",
+                    procreate: "Ilustración Digital con Procreate",
+                    gamedev: "Modificación de juegos y desarrollo",
+                    poems: "Escribir poemas",
+                },
+                obsessions: {
+                    title: "Obsesiones Actuales",
+                    coding: "Programación",
+                },
+                music: {
+                    title: "Música",
+                    sopao: "Sopão (literalmente una gran sopa) es mi playlist de Spotify que básicamente \
+                            es una mezcla de todas mis otras playlists (excepto metal, porque es demasiado grande) \
+                            en una gran revuelta musical.",
+                    playlist: "Playlist en Spotify"
+                },
+                gaming: {
+                    title: "Videojuegos",
+                },
+            },
         },
         philosophy: {
             title: "Mi Filosofía como Desenvolvedor",
