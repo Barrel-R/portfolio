@@ -90,7 +90,19 @@ const localization = {
         languages: "Languages & Tools",
         about: {
             title: "About Me",
-            description: "I'm a self-driven developer who thrives on learning fast and building software independently. From complex web apps in Laravel and Vue.js to desktop tools with Go and Wails, I deliver quality solutions tailored to the challenge. Let's create something great together.",
+            work: {
+                description: "I'm a self-driven developer who thrives on learning fast and building software \
+                            independently. From complex web apps in Laravel and Vue.js to desktop tools with Go and Wails, \
+                            I deliver quality solutions tailored to the challenge.",
+                tools: "nvim, tmux, obsidian",
+                subtitle: "Work Ethic",
+                ethic: "Focused on efficiency, speed, and delivering value through practical solutions",
+            },
+            personal: {
+                subtitle: "My Interests",
+                interests: "Cats, anime, drawing, gaming, writing",
+                music_title: "Music Preferences"
+            },
         },
         philosophy: {
             title: "My Developer Philosophy",

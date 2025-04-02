@@ -591,14 +591,96 @@
 
         <section id="about" class="py-24 bg-brown-800">
             <div class="container">
-                <h2 class="section-title" data-i18n="about.title">About Me</h2>
+                <h2 class="section-title text-beige-100" data-i18n="about.title">About Me</h2>
                 <div class="max-w-3xl mx-auto mt-12">
-                    <p class="text-beige-200 text-lg leading-relaxed text-center" data-i18n="about.description">
-                        I'm a self-driven developer who thrives on learning fast and building software independently.
-                        From complex web apps in Laravel and Vue.js to desktop tools with Go and Wails, I deliver
-                        quality solutions tailored to the challenge.
-                        Let's create something great together.
-                    </p>
+                    <div x-data="{ activeSection: 'work' }" class="about">
+                        <div class="btn-container">
+                            <button @click="activeSection = 'work'" class="toggle-btn"
+                                x-bind:class="{ 'btn-active': activeSection === 'work' }">
+                                Work
+                            </button>
+                            <button @click="activeSection = 'personal'" class="toggle-btn"
+                                x-bind:class="{ 'btn-active': activeSection === 'personal' }">
+                                Personal
+                            </button>
+                        </div>
+
+                        <div class="content-container">
+                            <div x-show="activeSection === 'work'" x-transition:enter="transition-slide"
+                                x-transition:enter-start="slide-start" x-transition:enter-end="slide-end"
+                                x-transition:leave="transition-slide" x-transition:leave-start="slide-end"
+                                x-transition:leave-end="slide-out" class="work-section">
+                                <div class="section-block">
+                                    <h3 class="section-subtitle" data-i18n="about.work.goals.title">Current Goals</h3>
+                                    <ul class="about-list">
+                                        <li data-i18n="about.work.goals.remote">Estabilish myself remotely</li>
+                                        <li data-i18n="about.work.goals.sync">Have my own synchronized environment</li>
+                                        <li data-i18n="about.work.goals.place">Get a new place</li>
+                                    </ul>
+                                </div>
+                                <div class="section-block">
+                                    <h3 class="section-subtitle" data-i18n="about.work.ethic.title">Work Ethic</h3>
+                                    <p data-i18n="about.work.ethic.description">
+                                        Focused on efficient, fast and simple code, and delivering value through
+                                        practical solutions
+                                    </p>
+                                </div>
+                                <div class="section-block">
+                                    <h3 class="section-subtitle" data-i18n="about.work.tools.title">Tools I Use</h3>
+                                    <p data-i18n="about.work.tools.description">nvim, tmux, obsidian</p>
+                                </div>
+                            </div>
+
+                            <div x-show="activeSection === 'personal'" x-transition:enter="transition-slide"
+                                x-transition:enter-start="slide-start" x-transition:enter-end="slide-end"
+                                x-transition:leave="transition-slide" x-transition:leave-start="slide-end"
+                                x-transition:leave-end="slide-out" class="personal-section">
+                                <div class="section-block">
+                                    <h3 class="section-subtitle" data-i18n="about.creative.title">Creative Pursuits</h3>
+                                    <ul class="about-list">
+                                        <li data-i18n="about.creative.procreate">
+                                            Digital illustration with Procreate
+                                        </li>
+                                        <li data-i18n="about.creative.gamedev">
+                                            Game modding and gamedev
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="section-block">
+                                    <h3 class="section-subtitle" data-i18n="about.obssessions.title">Current Obsessions
+                                    </h3>
+                                    <ul class="about-list">
+                                        <li>Hatsune Miku</li>
+                                        <li>Kendrick Lamar</li>
+                                        <li>Bocchi the Rock</li>
+                                        <li data-i18n="about.obesssions.coding">Coding</li>
+                                    </ul>
+                                </div>
+
+                                <div class="section-block">
+                                    <h3 class="section-subtitle" data-i18n="about.music.title">Music</h3>
+                                    <div class="mt-2">
+                                        <ul class="about-list">
+                                            <li>Breakcore (Aeru Ika, Ftlframe, Tokyopill)</li>
+                                            <li>Metal (Trivium, Gojira, Fit For An Autopsy)</li>
+                                            <li>Rap (Kendrick Lamar)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="section-block">
+                                    <h3 class="section-subtitle" data-i18n="about.gaming.title">Gaming</h3>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Disco Elysium</li>
+                                        <li>Satisfactory</li>
+                                        <li>Hades</li>
+                                        <li>Yakuza series</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
