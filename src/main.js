@@ -234,7 +234,7 @@ const localization = {
                 },
                 goals: {
                     title: "Metas Atuais",
-                    remote: "Estabelecer-me no mercado remoto",
+                    remote: "Me estabelecer no mercado remoto",
                     sync: "Criar meu ambiente sincronizado",
                     place: "Conseguir um novo espaço com área de trabalho dedicada",
                 },
